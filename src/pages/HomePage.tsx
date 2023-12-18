@@ -2,9 +2,9 @@ import { NavLink, Outlet } from "react-router-dom";
 import useCategorias from "../hooks/useCategorias";
 
 const HomePage = () => {
-  const { data: categorias, isLoading, error } = useCategorias();
+  const { data: categorias, isLoading: isLoadingCategorias, error } = useCategorias();
 
-  if (isLoading) return <h6>Carregando...</h6>;
+  if (isLoadingCategorias) return <h6>Carregando...</h6>;
 
   if (error) throw error;
 
