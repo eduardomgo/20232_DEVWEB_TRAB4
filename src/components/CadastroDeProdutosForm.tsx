@@ -100,7 +100,7 @@ const CadastroDeProdutosForm = () => {
       nome: nome,
       descricao: descricao,
       imagem: imagem,
-      categoria: { id: categoria, nome: "" },
+      categoria: { id: categoria, nome: "", slug: "" },
       disponivel: disponivel, // 12/10/2023
       // 2023-10-12
       dataCadastro: new Date(
