@@ -1,0 +1,11 @@
+body {
+    overflow-y: scroll;
+} 
+
+a:hover {
+    cursor: pointer;
+}
+
+div.error {
+    white-space: pre-line;
+}
