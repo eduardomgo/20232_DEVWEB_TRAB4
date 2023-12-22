@@ -9,3 +9,7 @@ a:hover {
 div.error {
     white-space: pre-line;
 }
+
+.card {
+    cursor: pointer;
+}

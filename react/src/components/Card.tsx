@@ -1,17 +1,29 @@
 import { ReactNode } from "react";
 
 interface Props {
-    id: number;
-    imagem: string;
-    titulo: string;
-    texto1: string;
-    texto2: string;
-    footer: ReactNode;
+   /**
+  * Imagem do card
+  */
+  imagem: string;
+  titulo: string;
+  texto1: string;
+  texto2: string;
+  footer: ReactNode;
+  onClick?: () => void;
 }
 
-const Card = ({id, imagem, titulo, texto1, texto2, footer}: Props) => {
+const Card = (props: Props) => {
+  const {
+    imagem, 
+    titulo, 
+    texto1, 
+    texto2, 
+    footer,
+    onClick
+  } = props;
+
   return (
-    <div className="card border-0 mb-5">
+    <div className="card border-0 mb-5" onClick={onClick}>
       <img src={imagem} className="card-img-top" />
       <div className="card-body">
         <h5 className="card-title">{titulo}</h5>

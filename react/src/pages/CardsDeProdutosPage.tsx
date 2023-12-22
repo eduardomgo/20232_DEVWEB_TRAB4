@@ -1,13 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Card from "../components/Card";
 import useProdutosPaginadosPorSlugDaCategoria from "../hooks/useProdutosPaginadosPorSlugDaCategoria";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const CardsDeProdutosPage = () => {
+  const navigate = useNavigate();
+
   const { slug } = useParams();
   const tamanho = 12;
   const { data, isLoading, error, fetchNextPage, hasNextPage } =
-
     useProdutosPaginadosPorSlugDaCategoria({
       tamanho,
       slug,
@@ -30,9 +31,11 @@ const CardsDeProdutosPage = () => {
       <div className="row">
         {data?.pages.map((page) =>
           page.itens.map((produto) => (
-            <div key={produto.id} className="col-xl-2 col-md-3 col-sm-4 col-6">
+            <div 
+              key={produto.id} 
+              className="col-xl-2 col-md-3 col-sm-4 col-6 "
+            >
               <Card
-                id={produto.id!}
                 imagem={produto.imagem}
                 titulo={produto.nome}
                 texto1={produto.descricao}
@@ -41,6 +44,7 @@ const CardsDeProdutosPage = () => {
                   minimumFractionDigits: 2,
                   useGrouping: true,
                 })}
+                onClick={() => navigate(`/produtos/${produto.id}`)}
                 footer={<input type="button" className="btn btn-primary w-100" value="Comprar" />}
               />
             </div>
