@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import useProduto from "../hooks/useProduto";
 import { formatCurrency } from "../util/helper";
-import useAdicionaItem from "../hooks/item/useAdicionaItem";
 
 const ProdutoPage = () => {
   const navigate = useNavigate();
@@ -9,7 +8,6 @@ const ProdutoPage = () => {
   const { id } = useParams();
 
   const { data: produto, isLoading: isLoadingProduto } = useProduto(id || ""); 
-  const { mutate: adicionaItem, error: errorAdicionaItem } = useAdicionaItem();
 
   if (isLoadingProduto) return <h6>Carregando...</h6>;
 
@@ -17,7 +15,7 @@ const ProdutoPage = () => {
     navigate("/carrinho");
   }
 
-  if (errorAdicionaItem) throw errorAdicionaItem;
+  // if (errorAdicionaItem) throw errorAdicionaItem;
 
   return (
     <div className="row">
