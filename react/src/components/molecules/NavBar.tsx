@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { PRIMARY_COLOR, SECONDARY_COLOR } from "../../assets/colors";
 import dudu from "/dudu.jpg";
-import carrinho from "/carrinho.png";
-
+import useCategorias from "../../hooks/useCategorias";
 
 function NavBar() {
+  const { data: categorias } = useCategorias();
+
   return (
     <div style={{backgroundColor: PRIMARY_COLOR}}>
       <div className="container pt-3 pb-3">
@@ -20,7 +21,7 @@ function NavBar() {
             <ul style={{ listStyleType: "none" }}>
               <li className="mt-2 d-flex justify-content-center">
                 <Link to="/carrinho" style={{ textDecoration: "none" }}>
-                  <img className="d-none d-md-block" src={carrinho} style={{ width: "35px" }} />
+                  <p className="text-white">Carrinho</p>
                 </Link>
               </li>
             </ul>
@@ -28,7 +29,16 @@ function NavBar() {
         </div>
       </div>
 
-      <div style={{ padding: "12px", backgroundColor: SECONDARY_COLOR }}></div>
+      <div className="navbar navbar-dark px-5" style={{ backgroundColor: SECONDARY_COLOR }}>
+        <NavLink aria-current="page" className="nav-link text-white text-uppercase fw-bold" to="/">
+          TODOS
+        </NavLink>
+        {categorias?.map((categoria) => (
+          <NavLink className="nav-link text-white text-uppercase fw-bold" to={`/${categoria.slug}`}>
+            {categoria.nome}
+          </NavLink>
+        ))}
+      </div>
     </div>
   );
 }
