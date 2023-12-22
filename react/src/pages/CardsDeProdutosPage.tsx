@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import Card from "../components/atoms/Card";
-import useProdutosPaginadosPorSlugDaCategoria from "../hooks/useProdutosPaginadosPorSlugDaCategoria";
+import useProdutosPaginadosPorSlugDaCategoria from "../hooks/produto/useProdutosPaginadosPorSlugDaCategoria";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const CardsDeProdutosPage = () => {

@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import useProduto from "../hooks/useProduto";
+import useProduto from "../hooks/produto/useProduto";
 import { formatCurrency } from "../util/helper";
 
 const ProdutoPage = () => {
