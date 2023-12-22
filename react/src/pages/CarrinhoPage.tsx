@@ -1,54 +1,32 @@
 import { useEffect, useState } from "react";
-import Produto from "../interfaces/produto";
+import Item from "../interfaces/item";
+import CarrinhoResumo from "../components/molecules/CarrinhoResumo";
+import CarrinhoItens from "../components/molecules/CarrinhoItens";
+
+const ITEMS: Item[] = []
 
 const CarrinhoPage = () => {
-  const [produtos, setProdutos] = useState<Produto[]>([]);
-  const [values, setValues] = useState(1);
-
+  const [total_amount, setTotalAmount] = useState(0);
+  const [total_value, setTotalValue] = useState(0);
+  
   useEffect(() => {
-    setProdutos([
-      {
-        id: 1, 
-        categoria: {
-          id: 1,
-          nome: 'Livros',
-          slug: 'livros'
-        },
-        imagem: '',
-        nome: 'O Senhor dos Anéis',
-        descricao: 'Descrição do produto',
-        disponivel: true,
-        dataCadastro: new Date(),
-        qtdEstoque: 10,
-        preco: 30
-      }
-    ]);
+    setTotalAmount(ITEMS.reduce((acc, item) => acc + item.quantidade, 0));
+    setTotalValue(ITEMS.reduce((acc, item) => acc + item.quantidade * item.produto.preco, 0));
   }, []);
 
   return (
-    <div>
-      Carrinho
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <button onClick={() => setValues(values + 1)}>+</button>
-        <tbody>
-          {produtos.map((produto) => (
-            <tr key={produto.id}>
-              <th scope="row">{produto.id}</th>
-              <td>{produto.nome}</td>
-              <td>{produto.preco}</td>
-              <td>{produto.descricao}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="row">
+      <div className="col-10">
+        <CarrinhoItens 
+          itens={ITEMS}
+        />
+      </div>
+      <div className="col-2">
+        <CarrinhoResumo 
+          total_amount={total_amount}
+          total_value={total_value}
+        />
+      </div>
     </div>
   );
 };
