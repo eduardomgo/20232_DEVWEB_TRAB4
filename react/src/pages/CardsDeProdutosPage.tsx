@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import Card from "../components/Card";
+import Card from "../components/atoms/Card";
 import useProdutosPaginadosPorSlugDaCategoria from "../hooks/useProdutosPaginadosPorSlugDaCategoria";
 import InfiniteScroll from "react-infinite-scroll-component";
 

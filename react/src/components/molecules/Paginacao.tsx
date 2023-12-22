@@ -1,5 +1,5 @@
-import useProdutosPaginados from "../hooks/useProdutosPaginados";
-import useProdutoStore from "../store/produtoStore";
+import useProdutosPaginados from "../../hooks/useProdutosPaginados";
+import useProdutoStore from "../../store/produtoStore";
 
 const Paginacao = () => {
   const pagina = useProdutoStore(s => s.pagina);

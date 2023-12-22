@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import useProdutoStore from "../store/produtoStore";
+import useProdutoStore from "../../store/produtoStore";
 
 const Pesquisa = () => {
   

@@ -1,18 +1,18 @@
 import { FieldValues, useForm } from "react-hook-form";
-import useCadastrarProduto from "../hooks/useCadastrarProduto";
-import Produto from "../interfaces/produto";
-import useCategorias from "../hooks/useCategorias";
+import useCadastrarProduto from "../../hooks/useCadastrarProduto";
+import Produto from "../../interfaces/produto";
+import useCategorias from "../../hooks/useCategorias";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import dataValida from "../util/dataValida";
-import Categoria from "../interfaces/categoria";
-import useApi from "../hooks/useApi";
-import { URL_CATEGORIAS } from "../util/constants";
+import dataValida from "../../util/dataValida";
+import Categoria from "../../interfaces/categoria";
+import useApi from "../../hooks/useApi";
+import { URL_CATEGORIAS } from "../../util/constants";
 import { useEffect } from "react";
 import dayjs from "dayjs";
-import useAlterarProduto from "../hooks/useAlterarProduto";
+import useAlterarProduto from "../../hooks/useAlterarProduto";
 import { DevTool } from "@hookform/devtools";
-import useProdutoStore from "../store/produtoStore";
+import useProdutoStore from "../../store/produtoStore";
 
 const { recuperar } = useApi<Categoria[]>(URL_CATEGORIAS);
 

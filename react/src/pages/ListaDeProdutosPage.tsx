@@ -1,7 +1,7 @@
-import CadastroDeProdutosForm from "../components/CadastroDeProdutosForm";
-import Paginacao from "../components/Paginacao";
-import Pesquisa from "../components/Pesquisa";
-import TabelasDeProdutos from "../components/TabelasDeProdutos";
+import CadastroDeProdutosForm from "../components/organisms/CadastroDeProdutosForm";
+import Paginacao from "../components/molecules/Paginacao";
+import Pesquisa from "../components/molecules/Pesquisa";
+import TabelasDeProdutos from "../components/molecules/TabelasDeProdutos";
 
 const ListaDeProdutosPage = () => {
   return (
