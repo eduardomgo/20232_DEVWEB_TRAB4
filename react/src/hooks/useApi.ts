@@ -30,7 +30,7 @@ const useApi = <T>(endpoint: string) => {
 
     const removerPorId = (id: number) =>
         axiosInstance
-            .delete(endpoint + "/" + id)
+            .delete(`${endpoint}/${id}`)
             .then(res => res.data)
             .catch((error) => {
                 if (error.response) {
@@ -101,9 +101,9 @@ const useApi = <T>(endpoint: string) => {
                 }
             })
     
-    const alterar = (obj: T) =>
+    const alterar = (obj: T, id: number) =>
         axiosInstance
-            .put<T>(endpoint, obj)
+            .put<T>(`${endpoint}/${id}`, obj)
             .then(res => res.data)
             .catch((error) => {
                 if (error.response) {
