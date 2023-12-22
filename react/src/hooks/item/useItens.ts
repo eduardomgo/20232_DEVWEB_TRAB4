@@ -3,8 +3,8 @@ import Item from "../../interfaces/item";
 import { URL_ITENS } from "../../util/constants";
 import useApi from "../useApi";
 
-const useItens = () => {
-  const { recuperar } = useApi<Item[]>(URL_ITENS);
+const useItens = (carrinho_id: number) => {
+  const { recuperar } = useApi<Item[]>(`${URL_ITENS}/${carrinho_id}`);
 
   return useQuery({
     queryKey: ["itens"],
