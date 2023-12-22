@@ -86,6 +86,7 @@ const CadastroDeProdutosForm = () => {
       imagem: "",
     },
   });
+  
   // console.log(register("nome"));
   const onSubmit = ({
     nome,
@@ -97,30 +98,30 @@ const CadastroDeProdutosForm = () => {
     qtd_estoque,
     preco,
   }: FieldValues) => {
-    const produto: Produto = {
-      nome: nome,
-      descricao: descricao,
-      imagem: imagem,
-      categoria: { id: categoria, nome: "", slug: "" },
-      disponivel: disponivel, // 12/10/2023
-      // 2023-10-12
-      dataCadastro: new Date(
-        data_cadastro.substring(6, 10) +
-          "-" +
-          data_cadastro.substring(3, 5) +
-          "-" +
-          data_cadastro.substring(0, 2)
-      ),
-      qtdEstoque: qtd_estoque,
-      preco: preco,
-    };
-    console.log(produto);
-    if (produtoSelecionado.id) {
-      produto.id = produtoSelecionado.id;
-      alterarProduto(produto);
-    } else {
-      cadastrarProduto(produto);
-    }
+    // const produto: Produto = {
+    //   nome: nome,
+    //   descricao: descricao,
+    //   imagem: imagem,
+    //   categoria: { id: categoria, nome: "", slug: "" },
+    //   disponivel: disponivel, // 12/10/2023
+    //   // 2023-10-12
+    //   dataCadastro: new Date(
+    //     data_cadastro.substring(6, 10) +
+    //       "-" +
+    //       data_cadastro.substring(3, 5) +
+    //       "-" +
+    //       data_cadastro.substring(0, 2)
+    //   ),
+    //   qtdEstoque: qtd_estoque,
+    //   preco: preco,
+    // };
+    // console.log(produto);
+    // if (produtoSelecionado.id) {
+    //   produto.id = produtoSelecionado.id;
+    //   alterarProduto(produto);
+    // } else {
+    //   cadastrarProduto(produto);
+    // }
   };
 
   useEffect(() => {
