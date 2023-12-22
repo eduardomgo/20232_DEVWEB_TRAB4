@@ -4,7 +4,7 @@ import { URL_ITENS } from "../../util/constants";
 import useApi from "../useApi";
 
 
-const useCadastrarItem = () => {
+const useAlterarItem = () => {
   const { alterar } = useApi<Item>(URL_ITENS);
   const queryClient = useQueryClient();
   
@@ -18,4 +18,4 @@ const useCadastrarItem = () => {
   });
 };
 
-export default useCadastrarItem;
+export default useAlterarItem;
