@@ -54,7 +54,7 @@ const useApi = <T>(endpoint: string) => {
         axiosInstance
             .get<ResultadoPaginado<T>>(endpoint + "/paginacao", config)
             .then(res => res.data)
-            .catch((error) => {
+            .catch((error: any) => {
                 if (error.response) {
                     // significa que o servidor respondeu, porém com erro
                     throw new CustomError(

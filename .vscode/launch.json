@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-Sb01Application<API-RESTful-SB03-para-Projeto08-Completo>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.carlosribeiro.sb01.Sb01Application",
+      "projectName": "API-RESTful-SB03-para-Projeto08-Completo",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
