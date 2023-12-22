@@ -1,14 +1,14 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import Produto from "../../interfaces/produto";
 import { URL_PRODUTOS } from "../../util/constants";
 import useApi from "../useApi";
+import IProdutoForm from "../../interfaces/forms/produtoForm";
 
 const useAlterarProduto = () => {
-  const { alterar } = useApi<Produto>(URL_PRODUTOS);
+  const { alterar } = useApi<IProdutoForm>(URL_PRODUTOS);
   const queryClient = useQueryClient();
   
   return useMutation({
-    mutationFn: (produto: Produto) => alterar(produto),
+    mutationFn: (produto: IProdutoForm) => alterar(produto),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["produtos"],

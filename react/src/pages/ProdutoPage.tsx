@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import useProduto from "../hooks/produto/useProduto";
 import { formatCurrency } from "../util/helper";
 import useCadastrarItem from "../hooks/item/useCadastrarItem";
+import IItemForm from "../interfaces/forms/itemForm";
 
 const ProdutoPage = () => {
   const navigate = useNavigate();
@@ -15,7 +16,7 @@ const ProdutoPage = () => {
 
   const addToCart = () => {
     if (produto) {
-      const new_item: ItemForm = { 
+      const new_item: IItemForm = { 
         carrinho: {
           id: 1,
         },

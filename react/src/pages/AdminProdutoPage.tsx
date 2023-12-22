@@ -23,20 +23,19 @@ const AdminProdutoPage = () => {
       </nav>
 
       <div className="mb-4">
-        <h3>Gerenciamento do Produto: {produto?.id}</h3>
+        <h3>{produto ? `Editar Produto ${produto.id}` : 'Criar Produto'}</h3>
         <hr className="mt-0" />
       </div>
 
-      {produto &&
-        <ProdutoForm 
-          produto={produto}
-        />
-      }
+      <ProdutoForm 
+        produto={produto}
+      />
 
       <div className="mb-4">
         <h5>Lista de Produtos</h5>
         <hr className="mt-0" />
       </div>
+      
       <Pesquisa />
       <TabelasDeProdutos />
       <Paginacao />

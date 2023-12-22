@@ -9,8 +9,10 @@ import CheckInput from "../atoms/CheckInput";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import useCadastrarProduto from "../../hooks/produto/useCadastrarProduto";
+import IProdutoForm from "../../interfaces/forms/produtoForm";
 interface IProps {
-  produto: Produto;
+  produto: Produto | null | undefined;
 }
 
 const ProdutoForm = (props: IProps) => {
@@ -37,13 +39,16 @@ const ProdutoForm = (props: IProps) => {
 
   const [errors, setErrors] = useState<any>({});
   const [values, setValues] = useState({
-    nome: produto.nome,
-    descricao: produto.descricao,
-    disponivel: produto.disponivel,
-    qtdEstoque: produto.qtdEstoque,
-    preco: produto.preco
+    nome: produto?.nome || '',
+    imagem: produto?.imagem || '',
+    descricao: produto?.descricao || '',
+    disponivel: produto?.disponivel || '',
+    qtdEstoque: produto?.qtdEstoque || 0,
+    categoriaId: produto?.categoria.id ? `${produto.categoria.id}` : '',
+    preco: produto?.preco || 0
   });
 
+  const {mutate: cadastrarProduto, isLoading: isLoadingCadastrarProduto} = useCadastrarProduto();
   const {mutate: alterarProduto, isLoading: isLoadingAlterarProduto} = useAlterarProduto();
   const {mutate: removerProduto, isLoading: isLoadingRemoverProduto} = useRemoverProduto();
 
@@ -58,28 +63,44 @@ const ProdutoForm = (props: IProps) => {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const updated_product = {
-      ...produto,
-      ...values
+    const new_product: IProdutoForm = {
+      nome: values['nome'],
+      imagem: values['imagem'],
+      descricao: values['descricao'],
+      disponivel: values['disponivel'],
+      qtdEstoque: values['qtdEstoque'],
+      preco: values['preco'],
+      categoria: {
+        id: values.categoriaId
+      }
     }
-    alterarProduto(updated_product);
-    navigate(`/produtos/${produto.id}`);
+    if (produto) {
+      alterarProduto({id: produto.id, ...new_product});
+      navigate(`/produtos/${produto.id}`);
+    } else {
+      cadastrarProduto(new_product);
+      navigate(`/`);
+    } 
   }
 
   const removeAndRedirect = () => {
-    removerProduto(produto.id);
-    navigate(`/`);
+    if (produto) {
+      removerProduto(produto.id);
+      navigate(`/`);
+    }
   }
 
   return (
     <div>
-      <button 
-        className="btn btn-danger"
-        onClick={removeAndRedirect} 
-        disabled={isLoadingRemoverProduto}
-      >
-        {isLoadingRemoverProduto? 'Removendo...' : 'Remover'}
-      </button>
+      {produto &&
+        <button 
+          className="btn btn-danger"
+          onClick={removeAndRedirect} 
+          disabled={isLoadingRemoverProduto}
+        >
+          {isLoadingRemoverProduto? 'Removendo...' : 'Remover'}
+        </button>
+      }
 
       <form onSubmit={onSubmit}>
         <TextInput
@@ -101,6 +122,26 @@ const ProdutoForm = (props: IProps) => {
           placeholder='Digite a descrição do produto'
           invalid={errors?.descricao}
           supportText={errors?.descricao?.message}
+        />
+        <TextInput
+          type="text"
+          labelText='Imagem'
+          name='imagem'
+          value={values['imagem']}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => onChange(setValues, setErrors, event)}
+          placeholder='Digite a imagem do produto'
+          invalid={errors?.imagem}
+          supportText={errors?.imagem?.message}
+        />
+        <TextInput
+          type="text"
+          labelText='Categoria ID'
+          name='categoriaId'
+          value={values['categoriaId']}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => onChange(setValues, setErrors, event)}
+          placeholder='Digite a categoria do produto'
+          invalid={errors?.categoriaId}
+          supportText={errors?.categoriaId?.message}
         />
         <TextInput
           type="number"
@@ -135,7 +176,7 @@ const ProdutoForm = (props: IProps) => {
           disabled={isLoadingAlterarProduto || values['nome'] === ''}
           type={'submit'}
         >
-          {isLoadingAlterarProduto ? 'Salvando...' : 'Salvar'}
+          {isLoadingCadastrarProduto || isLoadingAlterarProduto ? 'Salvando...' : 'Salvar'}
         </button>      
       </form>
     </div>
