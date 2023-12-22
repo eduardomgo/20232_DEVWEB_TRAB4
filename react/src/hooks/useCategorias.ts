@@ -4,7 +4,7 @@ import { URL_CATEGORIAS } from "../util/constants";
 import useApi from "./useApi";
 
 const useCategorias = () => {
-  const { recuperar } = useApi<Categoria>(URL_CATEGORIAS);
+  const { recuperar } = useApi<Categoria[]>(URL_CATEGORIAS);
 
   return useQuery({
     queryKey: ["categorias"],

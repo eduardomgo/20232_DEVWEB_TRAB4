@@ -14,7 +14,8 @@ import useAlterarProduto from "../hooks/useAlterarProduto";
 import { DevTool } from "@hookform/devtools";
 import useProdutoStore from "../store/produtoStore";
 
-const { recuperar } = useApi<Categoria>(URL_CATEGORIAS);
+const { recuperar } = useApi<Categoria[]>(URL_CATEGORIAS);
+
 let categoriasValidas: Categoria[];
 
 const validaCategoria = async (id: string) => {

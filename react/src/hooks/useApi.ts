@@ -8,7 +8,7 @@ const useApi = <T>(endpoint: string) => {
 
     const recuperar = () =>
         axiosInstance
-            .get<T[]>(endpoint)
+            .get<T>(endpoint)
             .then(res => res.data)
             .catch((error) => {
                 if (error.response) {
@@ -134,5 +134,3 @@ const useApi = <T>(endpoint: string) => {
 }
 
 export default useApi;
-
-// const { recuperar } = useApi<Produto>(URL_PRODUTOS);
