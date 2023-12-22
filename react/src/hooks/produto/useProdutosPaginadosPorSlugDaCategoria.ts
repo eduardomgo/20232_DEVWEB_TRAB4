@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import Produto from "../interfaces/produto";
-import useApiProduto from "./useApiProduto";
+import Produto from "../../interfaces/produto";
+import useApiProduto from "../useApiProduto";
 
 interface QueryString {
   tamanho: number;

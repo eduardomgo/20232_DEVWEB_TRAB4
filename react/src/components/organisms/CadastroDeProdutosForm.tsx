@@ -1,5 +1,5 @@
 import { FieldValues, useForm } from "react-hook-form";
-import useCadastrarProduto from "../../hooks/useCadastrarProduto";
+import useCadastrarProduto from "../../hooks/produto/useCadastrarProduto";
 import Produto from "../../interfaces/produto";
 import useCategorias from "../../hooks/useCategorias";
 import { z } from "zod";
@@ -10,7 +10,7 @@ import useApi from "../../hooks/useApi";
 import { URL_CATEGORIAS } from "../../util/constants";
 import { useEffect } from "react";
 import dayjs from "dayjs";
-import useAlterarProduto from "../../hooks/useAlterarProduto";
+import useAlterarProduto from "../../hooks/produto/useAlterarProduto";
 import { DevTool } from "@hookform/devtools";
 import useProdutoStore from "../../store/produtoStore";
 

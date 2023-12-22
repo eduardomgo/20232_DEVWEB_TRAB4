@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import useApiProduto from "./useApiProduto";
+import useApiProduto from "../useApiProduto";
 
 const useProdutosPorSlugDaCategoria = (slug?: string) => {
   const { recuperarProdutosPorSlugDaCategoria } = useApiProduto();

@@ -1,3 +1,5 @@
+import { ChangeEvent } from "react";
+
 export const formatCurrency = (value: any, precision=2) => {
 	let translation = localStorage.getItem('translation');
 	let currency = 'BRL';
@@ -17,3 +19,12 @@ export const formatCurrency = (value: any, precision=2) => {
 		}).format(value)
 		: '';
 };
+
+export const onChange = (setValues: Function, setErrors: Function, event: ChangeEvent<HTMLInputElement>) => {
+  setValues((oldValues: any) => ({...oldValues, [event.target.name]: event.target.value}));
+  setErrors((oldErrors: any) => {
+    delete oldErrors[event.target.name]
+
+    return oldErrors
+  });
+}

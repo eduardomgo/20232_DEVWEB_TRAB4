@@ -1,7 +1,7 @@
 import Categoria from "./categoria";
 
 interface Produto {
-    id?: number;
+    id: number;
     imagem: string;
     categoria: Categoria;
     nome: string;

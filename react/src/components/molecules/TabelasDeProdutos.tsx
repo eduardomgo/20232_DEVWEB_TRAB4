@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
 import Produto from "../../interfaces/produto";
-import useProdutosPaginados from "../../hooks/useProdutosPaginados";
+import useProdutosPaginados from "../../hooks/produto/useProdutosPaginados";
 import useProdutoStore from "../../store/produtoStore";
-import useRemoverProduto from "../../hooks/useRemoverProduto";
+import useRemoverProduto from "../../hooks/produto/useRemoverProduto";
 
 const TabelasDeProdutos = () => {
 

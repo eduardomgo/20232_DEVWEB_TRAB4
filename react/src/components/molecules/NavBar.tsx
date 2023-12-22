@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import hortifruti from "/hortifruti-icon.png";
 import carrinho from "/carrinho.png";
-import useProdutosPaginados from "../../hooks/useProdutosPaginados";
+import useProdutosPaginados from "../../hooks/produto/useProdutosPaginados";
 import useProdutoStore from "../../store/produtoStore";
 
 function NavBar() {

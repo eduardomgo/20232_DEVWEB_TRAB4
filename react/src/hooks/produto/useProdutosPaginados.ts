@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import Produto from "../interfaces/produto";
-import { URL_PRODUTOS } from "../util/constants";
-import useApi from "./useApi";
+import Produto from "../../interfaces/produto";
+import { URL_PRODUTOS } from "../../util/constants";
+import useApi from "../useApi";
 
 interface QueryString {
   pagina: number;

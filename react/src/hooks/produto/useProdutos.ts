@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import Produto from "../interfaces/produto";
+import Produto from "../../interfaces/produto";
 import axios from "axios";
 
 const useProdutos = () => useQuery({
