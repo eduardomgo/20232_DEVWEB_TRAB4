@@ -31,19 +31,19 @@ public class Sb01Application implements CommandLineRunner {
 	}
 	@Override
 	public void run(String... args) throws Exception {
-		Categoria frutas = new Categoria("Frutas", "frutas");
-		categoriaRepository.save(frutas);
-		Categoria legumes = new Categoria("Legumes", "legumes");
-		categoriaRepository.save(legumes);
-		Categoria verduras = new Categoria("Verduras", "verduras");
-		categoriaRepository.save(verduras);
+		Categoria hardware = new Categoria("Hardware", "hardware");
+		categoriaRepository.save(hardware);
+		Categoria cadeiras = new Categoria("Cadeiras", "cadeiras");
+		categoriaRepository.save(cadeiras);
+		Categoria tablets = new Categoria("Tablets", "tablets");
+		categoriaRepository.save(tablets);
 
 		Carrinho carrinho_unico = new Carrinho();
 		carrinhoRepository.save(carrinho_unico);
 
 		Produto produto = new Produto(
-				"abacate.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Abacate",
 				"1 unidade aprox. 750g",
 				true,
@@ -53,8 +53,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"abobora.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Abóbora",
 				"1 unidade aprox. 1,9kg",
 				true,
@@ -64,8 +64,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"acelga.jpg",
-				verduras,
+				"tablet.png",
+				tablets,
 				"Acelga",
 				"1 maço de aprox. 400g",
 				true,
@@ -75,8 +75,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"agriao.jpg",
-				verduras,
+				"tablet.png",
+				tablets,
 				"Agrião",
 				"1 maço de aprox. 200g",
 				true,
@@ -86,8 +86,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"alface.jpg",
-				verduras,
+				"tablet.png",
+				tablets,
 				"Alface",
 				"1 maço de aprox. 200g",
 				true,
@@ -97,8 +97,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"banana.jpg",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Banana",
 				"1 unidade aprox. 165g",
 				true,
@@ -108,8 +108,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"beringela.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Beringela",
 				"1 unidade aprox. 370g",
 				true,
@@ -119,8 +119,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"brocolis.jpg",
-				verduras,
+				"tablet.png",
+				tablets,
 				"Brócolis",
 				"1 unidade aprox. 300g",
 				true,
@@ -130,8 +130,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"cebola.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Cebola",
 				"1 unidade aprox. 200g",
 				true,
@@ -141,8 +141,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"cenoura.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Cenoura",
 				"1 unidade aprox. 180g",
 				true,
@@ -152,8 +152,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"cereja.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Cereja",
 				"1 unidade aprox. 250g",
 				true,
@@ -163,8 +163,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"chuchu.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Chuchu",
 				"1 unidade aprox. 300g",
 				true,
@@ -174,8 +174,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"couve.jpg",
-				verduras,
+				"tablet.png",
+				tablets,
 				"Couve",
 				"1 unidade aprox. 350g",
 				true,
@@ -185,8 +185,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"espinafre.jpg",
-				verduras,
+				"tablet.png",
+				tablets,
 				"Espinafre",
 				"1 maço de aprox. 200g",
 				true,
@@ -196,8 +196,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"jilo.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Jiló",
 				"1 unidade aprox. 100g",
 				true,
@@ -207,8 +207,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"kiwi.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Kiwi",
 				"1 caixa de aprox. 250g",
 				true,
@@ -218,8 +218,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"laranja.jpg",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Laranja",
 				"1 unidade aprox. 220g",
 				true,
@@ -229,8 +229,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"lichia.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Lichia",
 				"1 caixa de aprox. 400g",
 				true,
@@ -240,8 +240,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"limao.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Limão",
 				"1 unidade aprox. 110g",
 				true,
@@ -251,8 +251,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"mamao.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Mamão",
 				"1 unidade aprox. 530g",
 				true,
@@ -262,8 +262,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"maracuja.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Maracujá",
 				"1 unidade aprox. 130g",
 				true,
@@ -273,8 +273,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"melancia.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Melancia",
 				"1 fatia de aprox. 3,25kg",
 				true,
@@ -284,8 +284,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"nabo.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Nabo",
 				"1 unidade aprox. 600g",
 				true,
@@ -295,8 +295,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"pessego.png",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Pessego",
 				"1 unidade aprox. 140g",
 				true,
@@ -306,8 +306,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"pimentao.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Pimentão",
 				"1 unidade aprox. 110g",
 				true,
@@ -317,8 +317,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"quiabo.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Quiabo",
 				"1 unidade aprox. 250g",
 				true,
@@ -328,8 +328,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"rucula.jpg",
-				verduras,
+				"tablet.png",
+				tablets,
 				"Rúcula",
 				"1 caixa de aprox. 250g",
 				true,
@@ -339,8 +339,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"tomate.jpg",
-				legumes,
+				"cadeira.png",
+				cadeiras,
 				"Tomate",
 				"1 unidade aprox. 120g",
 				true,
@@ -350,8 +350,8 @@ public class Sb01Application implements CommandLineRunner {
 		produtoRepository.save(produto);
 
 		produto = new Produto(
-				"uva.jpg",
-				frutas,
+				"placamae.png",
+				hardware,
 				"Uva",
 				"1 caixa de 600g",
 				true,

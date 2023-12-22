@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.util.List;
 
+@CrossOrigin("http://localhost:5173")
 @RestController
 @RequestMapping("/item-de-carrinho")
 public class ItemDeCarrinhoController {
