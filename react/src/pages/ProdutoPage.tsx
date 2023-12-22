@@ -56,7 +56,7 @@ const ProdutoPage = () => {
                       className="btn btn-primary"
                       onClick={() => addToCart()}
                     >
-                      <p>Adicionar</p>
+                      Adicionar
                     </button>
                   }
                 </div>
@@ -65,7 +65,7 @@ const ProdutoPage = () => {
                     className="btn btn-primary"
                     onClick={() => navigate(`/admin/produtos/${id}`)}
                   >
-                    <p>Editar</p>
+                    Editar
                   </button>
                 </div>
               </div>
