@@ -8,7 +8,8 @@ interface IProdutoForm {
     id: string
   },
   imagem: string,
-  disponivel: string | boolean
+  disponivel: string | boolean,
+  dataCadastro: string
 }
 
 export default IProdutoForm;

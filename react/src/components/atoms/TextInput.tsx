@@ -1,9 +1,10 @@
 import { forwardRef, InputHTMLAttributes } from 'react';
+import { FieldError } from 'react-hook-form';
 
 interface TextInputProps extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
   labelText: string,
   type: "text" | "number" | "e-mail" | "password" | "textarea" | "date" | "time",
-  invalid?: boolean,
+  invalid?: boolean | undefined | FieldError,
   className?: string,
   supportText?: string
 }

@@ -20,10 +20,6 @@ export const formatCurrency = (value: any, precision=2) => {
 		: '';
 };
 
-export const onChange = (setValues: Function, setErrors: Function, event: ChangeEvent<HTMLInputElement>) => {
+export const onChange = (setValues: Function, event: ChangeEvent<HTMLInputElement>) => {
 	setValues((oldValues: any) => ({...oldValues, [event.target.name]: event.target.value}));
-  setErrors((oldErrors: any) => {
-    delete oldErrors[event.target.name];
-    return oldErrors;
-  });
 }
