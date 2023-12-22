@@ -61,7 +61,7 @@ const TabelasDeProdutos = () => {
               {produto.id}
             </td>
             <td width="10%" className="align-middle text-center">
-              <img src={produto.imagem} alt={produto.nome} style={{ width: "40px" }} />{" "}
+              <img src={`/${produto.imagem}`} alt={produto.nome} style={{ width: "40px" }} />{" "}
             </td>
             <td width="10%" className="align-middle text-center">
               {produto.categoria.nome}
