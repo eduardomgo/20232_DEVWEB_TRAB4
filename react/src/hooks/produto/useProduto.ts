@@ -7,7 +7,7 @@ const useProduto = (id: string) => {
   const { recuperar } = useApi<Produto>(`${URL_PRODUTOS}/${id}`);
 
   return useQuery({
-    queryKey: ["produto"],
+    queryKey: ['produtos', `produto-${id}`],
     queryFn: () => recuperar()
   });
 };

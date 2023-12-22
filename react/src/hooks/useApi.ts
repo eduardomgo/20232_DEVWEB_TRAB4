@@ -101,9 +101,9 @@ const useApi = <T>(endpoint: string) => {
                 }
             })
     
-    const alterar = (obj: T, id: number) =>
+    const alterar = (obj: T) =>
         axiosInstance
-            .put<T>(`${endpoint}/${id}`, obj)
+            .put<T>(endpoint, obj)
             .then(res => res.data)
             .catch((error) => {
                 if (error.response) {

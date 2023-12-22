@@ -8,7 +8,7 @@ const useAlterarProduto = () => {
   const queryClient = useQueryClient();
   
   return useMutation({
-    mutationFn: (produto: Produto) => alterar(produto, produto.id),
+    mutationFn: (produto: Produto) => alterar(produto),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["produtos"],

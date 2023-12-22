@@ -1,82 +1,36 @@
 import { Link } from "react-router-dom";
-import hortifruti from "/hortifruti-icon.png";
+import { PRIMARY_COLOR, SECONDARY_COLOR } from "../../assets/colors";
+import dudu from "/dudu.jpg";
 import carrinho from "/carrinho.png";
-import useProdutosPaginados from "../../hooks/produto/useProdutosPaginados";
-import useProdutoStore from "../../store/produtoStore";
+
 
 function NavBar() {
-  const pagina = useProdutoStore(s => s.pagina);
-  const tamanho = useProdutoStore(s => s.tamanho);
-  const nome = useProdutoStore(s => s.nome);
-  
-  const {
-    data: produtosPaginados,
-    isLoading,
-    error,
-  } = useProdutosPaginados({ pagina, tamanho, nome });
-
-  // if (removendo) return null;
-  if (isLoading) return <h6>Carregando...</h6>;
-
-  if (error) throw error;
-
-  const produtos = produtosPaginados!.itens;
-
   return (
-    <>
-      <div className="container mt-3 mb-2">
+    <div style={{backgroundColor: PRIMARY_COLOR}}>
+      <div className="container pt-3 pb-3">
         <div className="row">
           <div className="col-3 d-flex align-items-center">
             <Link to="/" style={{ textDecoration: "none", fontSize: "16px" }}>
-              <img className="d-none d-md-block" src={hortifruti} style={{ width: "70px" }} />
-              Hortifruti
+              <img className="d-none d-md-block" src={dudu} style={{ width: "70px" }} />
             </Link>
           </div>
           <div className="col-6">
-            <ul style={{ listStyleType: "none" }}>
-              <li className="mt-2 d-flex justify-content-center">
-                Faça seu
-                <Link className="ms-1" to="/login" style={{ textDecoration: "none" }}>
-                  login!
-                </Link>
-              </li>
-              <li className="d-flex justify-content-center">
-                <Link to="/cadastrar-produto" style={{ textDecoration: "none" }}>
-                  Cadastrar produto
-                </Link>
-              </li>
-              <li className="d-flex justify-content-center">
-                <Link to="/listar-produtos" style={{ textDecoration: "none" }}>
-                  Listar produtos
-                </Link>
-              </li>
-            </ul>
           </div>
           <div className="col-3 d-flex align-items-center justify-content-end">
             <ul style={{ listStyleType: "none" }}>
               <li className="mt-2 d-flex justify-content-center">
                 <Link to="/carrinho" style={{ textDecoration: "none" }}>
                   <img className="d-none d-md-block" src={carrinho} style={{ width: "35px" }} />
-                  Carrinho
                 </Link>
-              </li>
-              <li className="d-flex justify-content-center">
-                R${" "}
-                {produtos
-                  .reduce((total, produto) => produto.qtdEstoque * produto.preco + total, 0)
-                  .toLocaleString("pt-BR", {
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2,
-                    useGrouping: true,
-                  })}
               </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className="bg-danger" style={{ padding: "3px" }}></div>
-    </>
+      <div style={{ padding: "12px", backgroundColor: SECONDARY_COLOR }}></div>
+    </div>
   );
 }
+
 export default NavBar;

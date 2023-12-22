@@ -4,6 +4,7 @@ import CustomError from "../util/customError";
 
 const ErrorPage = () => {
   const error = useRouteError();
+  
   return (
     <>
       <NavBar />

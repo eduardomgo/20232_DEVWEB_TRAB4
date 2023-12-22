@@ -16,9 +16,9 @@ const AdminProdutoPage = () => {
     <div>
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item"><a href="#">Home</a></li>
-          <li className="breadcrumb-item"><a href="#">Library</a></li>
-          <li className="breadcrumb-item active" aria-current="page">Data</li>
+          <li className="breadcrumb-item"><a href="/">Home</a></li>
+          <li className="breadcrumb-item"><a href={`/produtos/${id}`}>Produto {id}</a></li>
+          <li className="breadcrumb-item active" aria-current="page">Admin Produto {id}</li>
         </ol>
       </nav>
 
