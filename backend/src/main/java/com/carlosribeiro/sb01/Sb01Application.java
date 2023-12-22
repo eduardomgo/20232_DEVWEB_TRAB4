@@ -359,5 +359,6 @@ public class Sb01Application implements CommandLineRunner {
 				60,
 				BigDecimal.valueOf(9.59));
 		produtoRepository.save(produto);
+		
 	}
 }
