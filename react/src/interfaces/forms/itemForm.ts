@@ -1,4 +1,4 @@
-interface ItemForm {
+interface IItemForm {
   carrinho: {
     id: number;
   },
@@ -7,3 +7,5 @@ interface ItemForm {
   },
   quantidade: number;
 }
+
+export default IItemForm;

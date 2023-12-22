@@ -3,6 +3,7 @@ import Item from "../../interfaces/item";
 import { formatCurrency } from "../../util/helper";
 import useAlterarItem from "../../hooks/item/useAlterarItem";
 import useRemoverItem from "../../hooks/item/useRemoverItem";
+import IItemForm from "../../interfaces/forms/itemForm";
 
 interface IProps {
   item: Item;
@@ -19,7 +20,7 @@ const CarrinhoItem = (props: IProps) => {
   const updateQuantidade = (nova_quantidade: number) => {
     if (nova_quantidade > 0) {
       setQuantidade(nova_quantidade);
-      const updated_item: ItemForm = {
+      const updated_item: IItemForm = {
         carrinho: {
           id: item.carrinhoId,
         },
