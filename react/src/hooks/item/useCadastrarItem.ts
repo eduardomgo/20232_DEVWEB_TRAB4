@@ -1,15 +1,13 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import Item from "../../interfaces/item";
-import { URL_ITENS } from "../../util/constants";
 import useApi from "../useApi";
 
 
 const useCadastrarItem = () => {
-  const { cadastrar } = useApi<Item>(URL_ITENS);
+  const { cadastrar } = useApi<ItemForm>('/item-de-carrinho');
   const queryClient = useQueryClient();
   
   return useMutation({
-    mutationFn: (item: Item) => cadastrar(item),
+    mutationFn: (item: ItemForm) => cadastrar(item),
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ["itens"],
